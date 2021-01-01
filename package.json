@@ -1,0 +1,11 @@
+{
+  "name": "com.twiik.utility",
+  "version": "1.0.0",
+  "displayName": "Utility",
+  "description": "Shared utility scripts.",
+  "author": {
+    "name": "TwiiK",
+    "email": "oyvind@nymedia.no",
+    "url": "http://twiik.net/"
+  }
+}
