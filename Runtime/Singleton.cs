@@ -1,19 +1,34 @@
 ﻿using UnityEngine;
 
-/// <summary>
-/// Singleton class.
-/// </summary>
-/// <typeparam name="T"></typeparam>
-public class Singleton<T> : MonoBehaviour where T : Component {
+namespace TwiiK.Utility {
 
-    public static T Instance { get; private set; }
+    /// <summary>
+    /// Inherit from this base class to create a singleton.
+    /// </summary>
+    public abstract class Singleton<T> : MonoBehaviour where T : MonoBehaviour {
 
-    public virtual void Awake() {
-        if (Instance == null) {
-            Instance = this as T;
+        /// <summary>
+        /// Access singleton instance through this propriety.
+        /// </summary>
+        public static T Instance { get; private set; }
+
+        public virtual void Awake() {
+            if (Instance != this) {
+                Instance = this as T;
+            }
         }
-        else {
-            Destroy(gameObject);
+
+        public virtual void OnDestroy() {
+            if (Instance == this) {
+                Instance = null;
+            }
+        }
+
+        private void OnApplicationQuit() {
+            if (Instance == this) {
+                Instance = null;
+            }
         }
     }
+
 }
