@@ -28,6 +28,17 @@ namespace TwiiK.Utility {
         public static float Remap(this float value, float a1, float a2, float b1, float b2) {
             return b1 + (value - a1) * (b2 - b1) / (a2 - a1);
         }
+        
+        /// <summary>
+        /// Returns a random value between the x and y value of a Vector2.
+        ///
+        /// Very useful when used in combination with the MinMaxSliderAttribute.
+        /// </summary>
+        /// <param name="vector2"></param>
+        public static float Random(this Vector2 vector2) {
+            return UnityEngine.Random.Range(vector2.x, vector2.y);
+        }
+
     }
 
 }
