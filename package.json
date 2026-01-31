@@ -1,0 +1,11 @@
+{
+  "name": "com.twiik.utility",
+  "version": "1.0.0",
+  "displayName": "TwiiK Utility",
+  "description": "A utility package with a few helper classes and extension methods. Tiny at the moment, but I'll keep adding to it as I go.",
+  "author": {
+    "name": "TwiiK",
+    "email": "oyvind.stromsvik@gmail.com",
+    "url": "https://oyvind-stromsvik.github.io"
+  }
+}
